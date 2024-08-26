@@ -16,8 +16,13 @@
   line-height: 1.2;
 }
 
-.lead__image {
+.lead__photo-container {
+  /* necessary for responsive image scaling */
   margin: 0 auto 92px;
   max-width: 984px;
   max-height: 615px;
+}
+
+.lead__image {
+  width: 100%;
 }

@@ -1,0 +1,14 @@
+.gallery {
+  margin: 0;
+  padding: 118px 48px 92px;
+  list-style: none;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(284px, 1fr));
+}
+
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; isn't really necessary if all images will fully fit */
+}

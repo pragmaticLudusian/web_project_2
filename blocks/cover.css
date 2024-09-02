@@ -1,7 +1,9 @@
 .cover {
   position: relative;
-  margin: 0 48px;
+  max-width: calc(1280px - 48px * 2); /* account for margin: 0 48px */
   background: url(../images/cover__background.jpg) no-repeat center/cover;
+  display: flex;
+  justify-content: center;
 }
 
 .cover__container {
@@ -10,12 +12,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* added bonus of not stretching the button out */
   gap: 32px;
+  z-index: 1;
 }
 
 .cover__overlay {
-  /* since overlapping bg cannot be made for some reason with background shorthand,
+  /* since overlapping bg cannot be made with background shorthand for some reason,
   an alternative needs to be made by using an overlay block w/ absolute positioning */
   position: absolute;
   top: 0;
@@ -23,13 +26,17 @@
   width: 100%;
   height: 100%;
   background-color: rgba(42, 44, 47, 0.3);
+  transition: background-color 0.8s ease-in-out;
+}
+
+.cover:hover .cover__overlay {
+  background-color: rgba(42, 44, 47, 0.8);
 }
 
 .cover__title {
   margin: 0;
   font-size: 72px;
   line-height: 1.05;
-  z-index: 1;
 }
 
 .cover__subtitle {
@@ -39,7 +46,6 @@
   text-align: center;
   font-size: 18px;
   line-height: 1.2;
-  z-index: 1;
 }
 .cover__buy {
   background-color: #0278fe;
@@ -50,7 +56,7 @@
   line-height: 1.4;
   font-weight: 600;
   padding: 13px 20px;
-  z-index: 1;
+  transition: background-color 0.4s ease;
 }
 
 .cover__buy:hover {

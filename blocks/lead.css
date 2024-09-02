@@ -1,5 +1,11 @@
 .lead {
   text-align: center;
+  padding-top: 90px;
+}
+
+.lead__text-container {
+  padding: 0 48px;
+  margin-bottom: 64px;
 }
 
 .lead__title {
@@ -10,7 +16,7 @@
 }
 
 .lead__subtitle {
-  margin: 0 auto 64px;
+  margin: 0 auto;
   max-width: 720px;
   font-size: 30px;
   line-height: 1.2;
@@ -18,7 +24,7 @@
 
 .lead__photo-container {
   /* necessary for responsive image scaling */
-  margin: 0 auto 92px;
+  margin: 0 auto;
   max-width: 984px;
   max-height: 615px;
 }
@@ -26,4 +32,20 @@
 .lead__image {
   width: 100%;
   mix-blend-mode: luminosity; /* grayscale */
+}
+
+@media screen and (max-width: 679px) {
+  /* mobile */
+}
+
+@media screen and (min-width: 680px) and (max-width: 979px) {
+  /* tablet */
+  .lead {
+    color: aqua; /* temp */
+  }
+
+  .lead__text-container {
+    padding: 0 24px;
+    margin-bottom: 36px;
+  }
 }

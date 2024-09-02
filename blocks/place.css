@@ -3,11 +3,11 @@
   gap: 40px;
   font-size: 18px;
   line-height: 1.2;
-  margin-bottom: 80px;
+  padding-bottom: 80px;
 }
 
 .place:last-of-type {
-  margin-bottom: 92px;
+  padding-bottom: 0;
 }
 
 .place_name_kyiv .place__image {
@@ -53,7 +53,7 @@
 }
 
 .place__image::before {
-  /* force image to be square */
+  /* force image to be squared */
   content: "";
   padding-bottom: 100%;
   display: block;
@@ -69,6 +69,7 @@
   font-weight: 600;
   padding: 13px 20px;
   align-self: flex-start;
+  transition: background-color 0.4s ease;
 }
 
 .place__buy:hover {
@@ -100,4 +101,21 @@
 
 .place__paragraph:last-of-type {
   margin: 0;
+}
+
+@media screen and (max-width: 679px) {
+  /* mobile */
+}
+
+@media screen and (min-width: 680px) and (max-width: 979px) {
+  /* tablet */
+  .place {
+    padding-bottom: 72px;
+    gap: 28px;
+  }
+
+  .place__title {
+    font-size: 42px;
+    line-height: 1.1;
+  }
 }

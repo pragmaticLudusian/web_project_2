@@ -1,6 +1,6 @@
 .intro {
   max-width: 984px;
-  margin: 0 auto;
+  padding: 90px 48px 120px;
 }
 
 .intro__container {
@@ -34,4 +34,15 @@
   max-width: 720px;
   font-size: 16px;
   line-height: 1.6;
+}
+
+@media screen and (max-width: 679px) {
+  /* mobile */
+}
+
+@media screen and (min-width: 680px) and (max-width: 979px) {
+  /* tablet */
+  .intro {
+    padding: 90px 24px;
+  }
 }

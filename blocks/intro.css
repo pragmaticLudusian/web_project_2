@@ -36,7 +36,7 @@
   line-height: 1.6;
 }
 
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 631px) {
   /* mobile */
   .intro {
     padding: 64px 16px 90px;
@@ -51,7 +51,7 @@
   }
 }
 
-@media screen and (min-width: 680px) and (max-width: 979px) {
+@media screen and (min-width: 632px) and (max-width: 979px) {
   /* tablet */
   .intro {
     padding: 90px 24px;

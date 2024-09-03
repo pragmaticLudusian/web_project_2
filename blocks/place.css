@@ -1,9 +1,10 @@
 .place {
-  display: flex;
-  gap: 40px;
   font-size: 18px;
   line-height: 1.2;
   padding-bottom: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px 40px;
 }
 
 .place:last-of-type {
@@ -34,51 +35,14 @@
   background: url(../images/places/photo12.jpg) no-repeat center/cover;
 }
 
-.place__column {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .place__title {
-  margin: 0 0 48px;
+  margin: 0;
   font-size: 72px;
   line-height: 1.05;
 }
 
-.place__image {
-  margin-bottom: 48px;
-  width: 100%;
-}
-
-.place__image::before {
-  /* force image to be squared */
-  content: "";
-  padding-bottom: 100%;
-  display: block;
-}
-
-.place__buy {
-  background-color: #0278fe;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 18px;
-  line-height: 1.4;
-  font-weight: 600;
-  padding: 13px 20px;
-  align-self: flex-start;
-  transition: background-color 0.4s ease;
-}
-
-.place__buy:hover {
-  background-color: #0063d2;
-  cursor: pointer;
-}
-
 .place__website {
-  margin-bottom: 48px;
+  align-self: end;
 }
 
 .place__url-heading {
@@ -95,6 +59,25 @@
   margin: 0;
 }
 
+.place__image {
+  width: 100%; /* failsafe; this isn't effective nor its height in a grid, unlike below: */
+}
+
+.place__image::before {
+  /* force image to be squared, even with a grid,
+  although alternatively and less effective would be aspect-ratio:1; */
+  height: 0;
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
+
+.place__text-block {
+  grid-row: span 3;
+  /* turns out this affects other columns' height from being square at lower values
+  there might be a better solution that would enforce the squaredness but this'll suffice */
+}
+
 .place__paragraph {
   margin: 0 0 25px;
 }
@@ -103,15 +86,57 @@
   margin: 0;
 }
 
-@media screen and (max-width: 679px) {
-  /* mobile */
+.place__buy {
+  background-color: #0278fe;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 600;
+  padding: 13px 20px;
+  justify-self: start;
+  align-self: start; /* avoid stretching with longer text-blocks */
+  transition: background-color 0.4s ease;
 }
 
-@media screen and (min-width: 680px) and (max-width: 979px) {
+.place__buy:hover {
+  background-color: #0063d2;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 631px) {
+  /* mobile */
+  .place {
+    grid-template-columns: auto;
+    gap: 30px;
+    padding-bottom: 50px;
+  }
+
+  .place__title {
+    font-size: 32px;
+    line-height: 1.1;
+    margin: 0 16px;
+  }
+
+  .place__website {
+    margin: 0 16px;
+  }
+
+  .place__text-block {
+    margin: 0 16px;
+  }
+
+  .place__buy {
+    margin: 0 16px;
+  }
+}
+
+@media screen and (min-width: 632px) and (max-width: 979px) {
   /* tablet */
   .place {
     padding-bottom: 72px;
-    gap: 28px;
+    column-gap: 28px;
   }
 
   .place__title {

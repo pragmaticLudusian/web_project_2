@@ -13,9 +13,16 @@
   /* object-fit: cover; isn't really necessary if all images will fully fit */
 }
 
-@media screen and (max-width: 679px) {
-  /* mobile */
+@media screen and (max-width: 615px) {
+  /* mobile; due to minmax() effective range is 320~631 */
   .gallery {
     padding: 0 16px;
+  }
+}
+
+@media screen and (min-width: 616px) and (max-width: 931px) {
+  /* tablet; due to minmax() effective range is 632~979 */
+  .gallery {
+    padding: 0 24px;
   }
 }

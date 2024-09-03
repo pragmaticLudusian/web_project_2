@@ -12,3 +12,10 @@
   height: 100%;
   /* object-fit: cover; isn't really necessary if all images will fully fit */
 }
+
+@media screen and (max-width: 679px) {
+  /* mobile */
+  .gallery {
+    padding: 0 16px;
+  }
+}

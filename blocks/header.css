@@ -7,3 +7,15 @@
   width: 270px;
   height: 70px;
 }
+
+@media screen and (max-width: 679px) {
+  /* mobile */
+  .header {
+    padding-top: 20px;
+  }
+
+  .header__logo {
+    width: 200px;
+    height: auto;
+  }
+}

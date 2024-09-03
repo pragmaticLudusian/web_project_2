@@ -36,14 +36,29 @@
 
 @media screen and (max-width: 679px) {
   /* mobile */
+  .lead {
+    padding-top: 50px;
+  }
+
+  .lead__text-container {
+    padding: 0 16px;
+    margin-bottom: 40px;
+  }
+
+  .lead__title {
+    font-size: 40px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .lead__subtitle {
+    font-size: 16px;
+    line-height: 1.25;
+  }
 }
 
 @media screen and (min-width: 680px) and (max-width: 979px) {
   /* tablet */
-  .lead {
-    color: aqua; /* temp */
-  }
-
   .lead__text-container {
     padding: 0 24px;
     margin-bottom: 36px;

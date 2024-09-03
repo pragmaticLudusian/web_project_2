@@ -54,6 +54,7 @@
   font-size: 18px;
   line-height: 1.2;
 }
+
 .cover__buy {
   background-color: #0278fe;
   color: #fff;
@@ -85,13 +86,6 @@
   .cover__subtitle {
     font-size: 14px;
     line-height: 1.15;
-  }
-}
-
-@media screen and (min-width: 632px) and (max-width: 979px) {
-  /* tablet */
-  .cover__container {
-    padding: 0;
   }
 }
 

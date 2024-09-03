@@ -6,12 +6,19 @@
   justify-content: center;
 }
 
+.cover::before {
+  content: "";
+  display: block;
+  padding-bottom: 740px;
+}
+
 .cover__container {
-  /* z-index isn't effective here without making this into a flex or applying to all its children */
-  padding: 243px 0;
+  /* z-index isn't effective here without making this into a flex item for the above
+  or applying to all of its children */
+  /* padding: 243px 0; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center; /* added bonus of not stretching the button out */
   gap: 32px;
   z-index: 1;
@@ -62,4 +69,37 @@
 .cover__buy:hover {
   background-color: #0063d2;
   cursor: pointer;
+}
+
+@media screen and (max-width: 631px) {
+  /* mobile */
+  .cover__container {
+    gap: 16px;
+  }
+
+  .cover__title {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .cover__subtitle {
+    font-size: 14px;
+    line-height: 1.15;
+  }
+}
+
+@media screen and (min-width: 632px) and (max-width: 979px) {
+  /* tablet */
+  .cover__container {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  /* cover-specific */
+  .cover::before {
+    content: "";
+    padding-bottom: 100%;
+    display: block;
+  }
 }
